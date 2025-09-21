@@ -11,7 +11,7 @@ const Navbar = ({ mobileMenu }) => {
       label: "COURIER SERVICES",
       dropdown: [
         "Domestic Courier",
-        "International Courier",  
+        "International Courier",
         "E-commerce Courier",
         "Liquid Courier",
         "Medicine Courier",
@@ -33,7 +33,7 @@ const Navbar = ({ mobileMenu }) => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="bg-red-600 text-white  hidden md:block">
+      <nav className="bg-red-600 text-white hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between px-12 py-3">
           <ul className="flex gap-10">
             {menuItems.map((item, index) => (
