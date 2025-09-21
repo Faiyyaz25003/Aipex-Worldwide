@@ -5,25 +5,22 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-      className="relative h-[500px] flex items-center justify-center text-center text-white"
+      className="relative h-[500px] flex items-center justify-center text-white"
       style={{
-        backgroundImage: "url('/hero.jpeg')", // ✅ from public folder
+        backgroundImage: "url('/hero.jpeg')", // ✅ Replace with your own image
         backgroundSize: "cover",
         backgroundPosition: "center",
-        filter: "brightness(1.2)", // ✅ makes image slightly brighter
       }}
     >
-      {/* Overlay (lighter now) */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-3xl px-6">
-        <h1 className="text-3xl md:text-3xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-          We offer innovative logistics solutions that
-        </h1>
-        <p className="text-base md:text-3xl text-gray-200 mb-8">
+      <div className="relative z-10 max-w-5xl px-6 text-left">
+        <h1 className="text-4xl md:text-[40px] font-extrabold leading-snug tracking-tight drop-shadow-lg font-sans">
+          We offer innovative logistics solutions that <br />
           deliver your couriers on time.
-        </p>
+        </h1>
       </div>
     </section>
   );

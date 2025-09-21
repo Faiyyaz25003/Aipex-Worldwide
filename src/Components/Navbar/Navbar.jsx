@@ -1,9 +1,11 @@
 
 "use client";
 import React, { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 import { FiChevronDown } from "react-icons/fi";
 
-const Navbar = ({ mobileMenu }) => {
+const Navbar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const menuItems = [
@@ -76,9 +78,24 @@ const Navbar = ({ mobileMenu }) => {
       </nav>
 
       {/* Mobile Navbar */}
-      {mobileMenu && (
-        <nav className="bg-red-600 text-white md:hidden">
-          <ul className="flex flex-col px-6 py-4 gap-3">
+      <div className="md:hidden bg-red-600 text-white">
+        <div className="flex items-center justify-between px-6 py-3">
+          {/* Hamburger + Text */}
+          <button
+            className="flex items-center gap-2 font-semibold"
+            onClick={() => setMobileMenu(!mobileMenu)}
+          >
+            {mobileMenu ? (
+              <HiX className="text-2xl" />
+            ) : (
+              <HiMenu className="text-2xl" />
+            )}
+            <span>Navigate To</span>
+          </button>
+        </div>
+
+        {mobileMenu && (
+          <ul className="flex flex-col px-6 pb-4 gap-3 bg-red-600">
             {menuItems.map((item, index) => (
               <li key={index} className="border-b border-red-400 pb-2">
                 {item.dropdown ? (
@@ -102,8 +119,8 @@ const Navbar = ({ mobileMenu }) => {
               </li>
             ))}
           </ul>
-        </nav>
-      )}
+        )}
+      </div>
     </>
   );
 };
